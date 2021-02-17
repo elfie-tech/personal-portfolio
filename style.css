@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand+SC&display=swap');
+
+
+/* 
+Colors:
+
+background-color: #CFE5F7;
+Header text color: #3F5E75;
+Paragraph text color: #636D75;
+Links color: #636D75;
+Clicked on Links color: #699BC2;
+Misc. color: #85C5F5;
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #636D75;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+#navbar {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+}
+
+#welcome-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #CFE5F7;
+}
+
+#welcome-section h1 {
+    color: #3F5E75;
+    font-family: 'Lato', sans-serif;
+}
+
+#welcome-section p {
+    font-family: 'Patrick Hand SC', sans-serif;
+    color: #636D75;
+}
+
