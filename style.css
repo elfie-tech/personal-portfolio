@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand+SC&display=swap');
 
 
+
 /* 
 Colors:
 
@@ -13,23 +14,46 @@ Clicked on Links color: #699BC2;
 Misc. color: #85C5F5;
 */
 
+/* removes automatic browser margin and padding */
 * {
     margin: 0;
     padding: 0;
 }
 
+
+
+
+/* styles anchor/link tags */
 a {
     text-decoration: none;
     color: #636D75;
+    font-family: 'Lato', sans-serif;
+    font-weight: 1000;
 }
+
+a:hover {
+    transform: translateY(2px);
+    color: #3F5E75;
+}
+
 
 html {
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
+
+
+
+/* START NAV STYLING */
 #navbar {
     display: flex;
     justify-content: flex-end;
+    background-color: #CFE5F7;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
 }
 
 .nav-list {
@@ -37,6 +61,18 @@ html {
     list-style: none;
 }
 
+.nav-list a {
+    display: block;
+    font-size: 2em;
+    padding: .5em;
+    transition: transform 0.3x(ease-out);
+}
+/* END NAV STYLING */
+
+
+
+
+/* START WELCOME STYLING */
 #welcome-section {
     display: flex;
     flex-direction: column;
@@ -49,19 +85,119 @@ html {
 #welcome-section h1 {
     color: #3F5E75;
     font-family: 'Lato', sans-serif;
+    font-size: 10em;
 }
 
 #welcome-section p {
-    font-family: 'Patrick Hand SC', sans-serif;
+    /* font-family: 'Patrick Hand SC', sans-serif; */
+    font-family: 'Lato', sans-serif;
     color: #636D75;
+    font-size: 5em;
+}
+/* END WELCOME STYLING */
+
+
+
+
+/* START PROJECT STYLING */
+#projects {
+    display: flex;
+    justify-content: center;
+    background-color: #CFE5F7;
 }
 
 .project-grid {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    background-color: #3F5E75;
+    padding: 1em;
 }
 
 figure {
     margin: 1rem;
 }
 
+figure img {
+ /* height: 500px; */
+    width: 395px;
+}
+
+figcaption {
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    font-weight: 600;
+    font-size: 1.5em;
+    color: #CFE5F7;
+}
+/* END PROJECT STYLING */
+
+
+
+
+/* START CONTACT STYLING */
+#contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #CFE5F7;
+    padding: 5em;
+}
+
+#contact h1 {
+    color: #3F5E75;
+    font-family: 'Lato', sans-serif;
+    font-size: 5em;
+}
+
+#contact p {
+    font-family: 'Lato', sans-serif;
+    color: #636D75;
+    font-size: 2.5em;
+    font-weight: 800;
+}
+
+.contact-details {
+    display: block;
+    font-size: 1em;
+    color: #3F5E75;
+    transition: transform 0.3x(ease-out);
+}
+/* END CONTACT STYLING */
+
+
+
+
+footer {
+    display: flex;
+    justify-content: center;
+    background-color: #CFE5F7;
+    color: #636D75;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.5em;
+    font-weight: 800;
+    padding: 2em;
+}
+
+@media (max-width: 1200px) {
+    html {
+        font-size: 100%;
+    }
+}
+
+@media (max-width: 980px) {
+    html {
+        font-size: 75%;
+    }
+    img {
+        width: 25%;
+    }
+}
+
+@media (max-width: 450px) {
+    html {
+        font-size: 50%;
+
+    }
+}
