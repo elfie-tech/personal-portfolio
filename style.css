@@ -56,3 +56,12 @@ html {
     color: #636D75;
 }
 
+.project-grid {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+figure {
+    margin: 1rem;
+}
+
