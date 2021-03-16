@@ -21,10 +21,16 @@ femaleButton.addEventListener("click", () => populateDOM(femaleCharacters))
 
 mainHeader.appendChild(femaleButton)
 
+//otherButton
+const otherButton = document.createElement("button")
+otherButton.textContent = "Other Characters"
+otherButton.addEventListener("click", () => populateDOM(otherCharacters))
+
+mainHeader.appendChild(otherButton)
+
 //maleCharacters
 const maleCharacters = people.filter(person => person.gender === "male")
 console.log(maleCharacters)
-
 
 //femaleCharacters
 const femaleCharacters = people.filter(person => person.gender === "female")
@@ -32,10 +38,12 @@ console.log(femaleCharacters)
 
 //otherCharacters
 const otherCharacters = people.filter(person => {
-    if (person.gender === "n/a" || person.gender === "none") {
+    if (person.gender === "n/a" || person.gender === "none" || person.gender === "hermaphrodite") {
         return person
     }
 })
+
+//Included Jabba's gender in the otherCharacters 'if' condition :)
 
 //populateDOM function
 function populateDOM(characters) {
@@ -72,3 +80,4 @@ function removeChildren(container) {
         container.removeChild(container.firstChild)
     }
 }
+
