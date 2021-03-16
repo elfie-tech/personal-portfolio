@@ -1,9 +1,24 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000000;
 }
 
 .movieList {
     display: flex;
     flex-wrap: wrap;
+}
+
+figure {
+    margin: 1em;
+}
+
+figcaption {
+    text-align: center;
+    background-color: #000000;
+    color: #ffffff;
 }
