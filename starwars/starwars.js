@@ -10,16 +10,15 @@ let itemTwo = document.querySelector("#item2");
 itemOne.textContent = films[2].title;
 itemTwo.textContent = films[1].title; */
 
-let titleList = document.querySelector(".titleList");
+let movieList = document.querySelector(".movieList");
 
 for (let i = 0; i < films.length; i++) {
     const foundFilm = films.find(film => getLastNumber(film.url) === (i + 1))
-    let newItem = document.createElement("li")
-    newItem.textContent = foundFilm.title
-    titleList.appendChild(newItem)
+
+    let newImage = document.createElement("img")
+    newImage.src = "https://starwars-visualguide.com/assets/img/films/4.jpg"
     
-    console.log(foundFilm)
-    getLastNumber(films[i].url)
+    movieList.appendChild(newImage)
 }
 
 function getLastNumber(url) {
