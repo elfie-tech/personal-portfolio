@@ -13,17 +13,17 @@ itemTwo.textContent = films[1].title; */
 let titleList = document.querySelector(".titleList");
 
 for (let i = 0; i < films.length; i++) {
-    let title = films[i].title
+    const foundFilm = films.find(film => getLastNumber(film.url) === (i + 1))
     let newItem = document.createElement("li")
-    newItem.textContent = title
+    newItem.textContent = foundFilm.title
     titleList.appendChild(newItem)
+    
+    console.log(foundFilm)
     getLastNumber(films[i].url)
 }
 
 function getLastNumber(url) {
-    let end = url.length - 2
-    let end2 = url[url.length - 2]
-    let end3 = url.charAt(url.length - 2)
-    console.log(end, end2, end3)
+    let end = url[url.length - 2]
+    return parseInt(end, 10)
 }
 
