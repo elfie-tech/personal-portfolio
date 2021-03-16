@@ -13,6 +13,15 @@ maleButton.addEventListener("click", () => {
 mainHeader.appendChild(maleButton)
 document.body.insertBefore(mainHeader, mainContent)
 
+/*      IDEAS FOR FEMALE BUTTON
+const femaleButton = document.createElement("button")
+femaleButton.textContent = "Female Characters"
+femaleButton.addEventListener("click", () => {
+    populateDOM(femaleCharacters)
+})
+
+mainHeader.appendChild(femaleButton)
+document.body.insertBefore(mainHeader, mainContent) */
 
 const maleCharacters = people.filter(person => person.gender === "male")
 console.log(maleCharacters)
