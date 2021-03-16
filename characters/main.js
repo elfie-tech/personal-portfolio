@@ -7,7 +7,7 @@ const mainHeader = document.createElement("header")
 const maleButton = document.createElement("button")
 maleButton.textContent = "Male Characters"
 maleButton.addEventListener("click", () => {
-    console.log("Thanks for clicking.")
+    populateDOM(maleCharacters)
 })
 
 mainHeader.appendChild(maleButton)
@@ -29,20 +29,22 @@ const otherCharacters = people.filter(person => {
 console.log(otherCharacters)
 
 
-people.forEach(person => {
-    const charFigure = document.createElement("figure")
-    const charImg = document.createElement("img")
-    let charNum = getLastNumber(person.url)
+function populateDOM(characters) {
+    characters.forEach(person => {
+        const charFigure = document.createElement("figure")
+        const charImg = document.createElement("img")
+        let charNum = getLastNumber(person.url)
 
-    charImg.src = `https://starwars-visualguide.com/assets/img/characters/${charNum}.jpg`
-    const charCaption = document.createElement("figcaption")
+        charImg.src = `https://starwars-visualguide.com/assets/img/characters/${charNum}.jpg`
+        const charCaption = document.createElement("figcaption")
 
-    charCaption.textContent = person.name
+        charCaption.textContent = person.name
 
-    charFigure.appendChild(charImg)
-    charFigure.appendChild(charCaption)
-    mainContent.appendChild(charFigure)
-})
+        charFigure.appendChild(charImg)
+        charFigure.appendChild(charCaption)
+        mainContent.appendChild(charFigure)
+    })
+}
 
 function getLastNumber(url) {
     let end = url.lastIndexOf("/")
