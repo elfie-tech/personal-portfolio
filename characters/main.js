@@ -1,44 +1,45 @@
 import { people } from "../data/people.js"
 
+//misc.
 const mainContent = document.querySelector("main")
 
 const mainHeader = document.createElement("header")
 
-const maleButton = document.createElement("button")
-maleButton.textContent = "Male Characters"
-maleButton.addEventListener("click", () => {
-    populateDOM(maleCharacters)
-})
-
-mainHeader.appendChild(maleButton)
 document.body.insertBefore(mainHeader, mainContent)
 
-/*      IDEAS FOR FEMALE BUTTON
+//maleButton
+const maleButton = document.createElement("button")
+maleButton.textContent = "Male Characters"
+maleButton.addEventListener("click", () => populateDOM(maleCharacters))
+
+mainHeader.appendChild(maleButton)
+
+//femaleButton
 const femaleButton = document.createElement("button")
 femaleButton.textContent = "Female Characters"
-femaleButton.addEventListener("click", () => {
-    populateDOM(femaleCharacters)
-})
+femaleButton.addEventListener("click", () => populateDOM(femaleCharacters))
 
 mainHeader.appendChild(femaleButton)
-document.body.insertBefore(mainHeader, mainContent) */
 
+//maleCharacters
 const maleCharacters = people.filter(person => person.gender === "male")
 console.log(maleCharacters)
 
+
+//femaleCharacters
 const femaleCharacters = people.filter(person => person.gender === "female")
 console.log(femaleCharacters)
 
+//otherCharacters
 const otherCharacters = people.filter(person => {
     if (person.gender === "n/a" || person.gender === "none") {
         return person
     }
 })
 
-console.log(otherCharacters)
-
-
+//populateDOM function
 function populateDOM(characters) {
+    removeChildren(mainContent)
     characters.forEach(person => {
         const charFigure = document.createElement("figure")
         const charImg = document.createElement("img")
@@ -55,6 +56,7 @@ function populateDOM(characters) {
     })
 }
 
+//getLastNumber function
 function getLastNumber(url) {
     let end = url.lastIndexOf("/")
     let start = end - 2
@@ -62,4 +64,11 @@ function getLastNumber(url) {
         start++
     }
     return url.slice(start, end)
+}
+
+//removeChildren function
+function removeChildren(container) {
+    while (container.firstChild) {
+        container.removeChild(container.firstChild)
+    }
 }
