@@ -1,4 +1,5 @@
 import { people } from "../data/people.js"
+import { removeChildren, getLastNumber } from "../utils/index.js"
 
 //misc.
 const mainContent = document.querySelector("main")
@@ -63,21 +64,3 @@ function populateDOM(characters) {
         mainContent.appendChild(charFigure)
     })
 }
-
-//getLastNumber function
-function getLastNumber(url) {
-    let end = url.lastIndexOf("/")
-    let start = end - 2
-    if (url.charAt(start) === "/") {
-        start++
-    }
-    return url.slice(start, end)
-}
-
-//removeChildren function
-function removeChildren(container) {
-    while (container.firstChild) {
-        container.removeChild(container.firstChild)
-    }
-}
-
