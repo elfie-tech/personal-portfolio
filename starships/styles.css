@@ -3,19 +3,29 @@
     box-sizing: border-box;
 }
 
-body {
-    background-color: #000000;
+.star {
+    z-index: -1;
 }
 
 main {
     display: flex;
 }
 
-a {
+.navAnchor {
     text-decoration: none;
     color: #ffffff;
+    transition: background-color .5s;
+}
+
+.navAnchor:hover {
+    color: #70989f;
 }
 
 li {
     list-style-type: none;
 }
+
+p, h1, h2, h3, h4, h5, h6 {
+    color: white;
+}
+
