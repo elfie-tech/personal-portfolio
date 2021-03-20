@@ -1,11 +1,10 @@
 //getLastNumber function
 export function getLastNumber(url) {
-    let end = url.lastIndexOf("/")
-    let start = end - 2
-    if (url.charAt(start) === "/") {
-        start++
-    }
-    return +url.slice(start, end) //unary + operator
+    let endSlash = url.lastIndexOf("/")
+    let smallUrl = url.slice(0, endSlash )
+    let startSlash = smallUrl.lastIndexOf("/")
+
+    return +url.slice(startSlash + 1, endSlash) //unary + operator
 }
 
 //removeChildren function
