@@ -3,12 +3,19 @@
     box-sizing: border-box;
 }
 
+header {
+    display: flex;
+    justify-content: center;
+}
+
 .star {
     z-index: -1;
 }
 
 main {
     display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
 
 .navAnchor {
@@ -31,4 +38,24 @@ p, h1, h2, h3, h4, h5, h6 {
 
 .shipName {
     text-align: center;
+    background-color: black;
+}
+
+.navList, .navAnchor {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.shipView {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+footer {
+    display: flex;
+    justify-content: center;
 }
