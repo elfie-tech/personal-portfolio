@@ -15,7 +15,7 @@ header {
 main {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: center;
 }
 
 .navAnchor {
@@ -52,7 +52,7 @@ p, h1, h2, h3, h4, h5, h6 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
+    min-width: 800px;
 }
 
 footer {
