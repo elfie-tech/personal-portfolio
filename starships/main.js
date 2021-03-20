@@ -24,13 +24,19 @@ function populateNav() {
 function populateShipView(shipData) {
     removeChildren(shipView)
     let shipImage = document.createElement("img")
+    let shipName = document.createElement("h2")
+    shipName.className = "shipName"
+    shipName.textContent = shipData.name
+
     let shipNum = getLastNumber(shipData.url)
     shipImage.src = `https://starwars-visualguide.com/assets/img/starships/${shipNum}.jpg`
     shipImage.addEventListener("error", () => {
         console.log("No image available")
         shipImage.src = "../images/shipUnavailable.png"
     })
+
     shipView.appendChild(shipImage)
+    shipView.appendChild(shipName)    
 }
 
 //allows nav to populate
