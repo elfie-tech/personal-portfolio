@@ -37,15 +37,12 @@ function populateShipView(shipData) {
 //allows nav to populate
 populateNav()
 //allows shipview to populate
-populateShipView()
-
-
-
+// populateShipView()
 
 
 
 //starField function
-/* function addStarField(element, numStars) {
+function addStarField(element, numStars) {
     element.style.setProperty ("background-color", "black" )
     for (let i = 0; i < numStars; i++) {
         let star = document.createElement("div")
@@ -65,13 +62,12 @@ populateShipView()
 function getRandomPosition() {
     let y = document.body.scrollHeight
     let x = document.body.scrollWidth
-    let randomY = Math.floor(Math.random() = y)
-    let randomX = Math.floor(Math.random() = x)
+    let randomY = Math.floor(Math.random() * y)
+    let randomX = Math.floor(Math.random() * x)
     return (randomX, randomY)
 }
 
 addStarField(document.querySelector("body"), 400)
- */
 
 
 
