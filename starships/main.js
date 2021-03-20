@@ -26,8 +26,8 @@ function populateShipView(shipData) {
     let shipNum = getLastNumber(shipData.url)
     shipImage.src = `https://starwars-visualguide.com/assets/img/starships/${shipNum}.jpg`
     shipImage.addEventListener("error", () => {
-        console.log("oops")
-        shipImage.hidden = true
+        console.log("No image available")
+        shipImage.src = "../images/shipUnavailable.png"
     })
     shipView.appendChild(shipImage)
 
@@ -35,10 +35,6 @@ function populateShipView(shipData) {
 
 //allows nav to populate
 populateNav()
-//allows shipview to populate
-// populateShipView()
-
-
 
 //starField function
 function addStarField(element, numStars) {
@@ -49,8 +45,7 @@ function addStarField(element, numStars) {
         star.style.setProperty("height", "2px")
         star.style.setProperty("background-color", "white")
 
-
-        let xy = getRandomPosition
+        let xy = getRandomPosition()
         star.style.left = `${xy[0]}px`
         star.style.top = `${xy[1]}px`
         star.style.setProperty("position", "absolute")
@@ -67,7 +62,3 @@ function getRandomPosition() {
 }
 
 addStarField(document.querySelector("body"), 400)
-
-
-
-/* Create dialogue box that says ship isn't available or is undergoing repairs - for broken images */
