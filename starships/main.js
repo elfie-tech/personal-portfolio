@@ -11,6 +11,7 @@ function populateNav() {
     starships.forEach((starship) => {
         let anchorWrap = document.createElement("a")
         anchorWrap.href = "#"
+        anchorWrap.className = "navAnchor"
         anchorWrap.addEventListener("click", () => {populateShipView(starship)})
         let listItem = document.createElement("li")
         anchorWrap.textContent = starship.name
@@ -30,7 +31,6 @@ function populateShipView(shipData) {
         shipImage.src = "../images/shipUnavailable.png"
     })
     shipView.appendChild(shipImage)
-
 }
 
 //allows nav to populate
@@ -42,6 +42,7 @@ function addStarField(element, numStars) {
     element.style.setProperty('background-color', 'black')
     for (let i = 0; i < numStars; i++) {
         let star = document.createElement('div')
+        star.className = "star"
         star.style.setProperty('width', '2px')
         star.style.setProperty('height', '2px')
         star.style.setProperty('background-color', 'white')
@@ -62,4 +63,5 @@ function getRandomPosition() {
     return [randomX, randomY]
 }
 
-addStarField(document.querySelector('body'), 800)
+let body = document.querySelector('body')
+addStarField(body, 800)
