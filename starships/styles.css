@@ -1,7 +1,16 @@
+/* Import Star Wars Font */
+@import url(https://allfont.net/allfont.css?fonts=star-jedi);
+
 :root {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+
+/* Star Wars Font */
+.starwarsFont {
+    font-family: 'Star Jedi', arial;
 }
 
 header {
