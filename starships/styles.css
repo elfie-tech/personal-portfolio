@@ -11,6 +11,7 @@
 /* Star Wars Font */
 .starwarsFont {
     font-family: 'Star Jedi', arial;
+    font-size: 75px;
 }
 
 header {
@@ -27,6 +28,10 @@ main {
     flex-direction: row;
     justify-content: center;
     height: 100vh;
+}
+
+img, nav {
+    position: relative;
 }
 
 .navAnchor {
@@ -50,6 +55,7 @@ p, h1, h2, h3, h4, h5, h6 {
 .shipName {
     text-align: center;
     background-color: black;
+    font-family: 'Star Jedi', arial;
 }
 
 .navList, .navAnchor {
