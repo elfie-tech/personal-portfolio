@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand+SC&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 
 /* 
@@ -125,10 +125,10 @@ figure img {
 
 figcaption {
     text-align: center;
-    font-family: 'Lato', sans-serif;
-    font-weight: 600;
-    font-size: 1.5em;
+    font-family: 'Roboto', sans-serif;
+    font-size: 2em;
     color: #CFE5F7;
+    padding-top: .5em;
 }
 /* END PROJECT STYLING */
 
