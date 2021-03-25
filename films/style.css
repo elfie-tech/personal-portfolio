@@ -54,4 +54,7 @@ footer {
     display: flex;
     justify-content: center;
     color: white;
+    margin: 2em;
+    font-family:monospace;
+    font-size: 2em;
 }
