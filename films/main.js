@@ -26,4 +26,3 @@ for (let i = 0; i < films.length; i++) {
     figure.appendChild(figCaption)
     movieList.append(figure)
 }
-
