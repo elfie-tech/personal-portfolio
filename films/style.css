@@ -1,4 +1,7 @@
-* {
+/* Import Star Wars Font */
+  @import url(https://allfont.net/allfont.css?fonts=star-jedi);
+
+:root {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -8,9 +11,30 @@ body {
     background-color: #000000;
 }
 
+.star {
+    z-index: -1;
+}
+
+main {
+/*     height: 100vh; */
+}
+
 .movieList {
     display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     flex-wrap: wrap;
+}
+
+h1 {
+    text-align: center;
+}
+
+.starwarsFont {
+    font-family: 'Star Jedi', arial;
+    font-size: 75px;
+    color: white;
 }
 
 figure {
@@ -21,4 +45,12 @@ figcaption {
     text-align: center;
     background-color: #000000;
     color: #ffffff;
+    font-family: arial;
+    font-size: 2em;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    color: white;
 }
