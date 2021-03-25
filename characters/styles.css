@@ -31,21 +31,28 @@ h1 {
 }
 
 button {
+    font-family: 'Franklin Gothic Demi Cond', arial;
     background-color: black;
     color: white;
     box-shadow: 1px 1px 1px white;
     padding: 1em;
     margin: 2em;
     font-size: 2em;
+    pointer-events: fill;
 }
 
 figure > img {
-    height: 300px;
+    height: 500px;
     margin: 2em;
 }
 
-figure:hover {
-    box-shadow: 10px 5px 5px white;
+figure {/* 
+    border: 5px solid white; */
+    margin: 1em;
+}
+
+img {
+    border: 5px solid white;
 }
 
 figcaption {
