@@ -13,4 +13,3 @@ export function removeChildren(container) {
         container.removeChild(container.firstChild)
     }
 }
-
