@@ -1,5 +1,6 @@
 /* Import Star Wars Font */
   @import url(https://allfont.net/allfont.css?fonts=star-jedi);
+  @import url(https://allfont.net/allfont.css?fonts=franklin-gothic-demi-cond);
 
 :root {
     margin: 0;
@@ -45,7 +46,7 @@ figcaption {
     text-align: center;
     background-color: #000000;
     color: #ffffff;
-    font-family: arial;
+    font-family: 'Franklin Gothic Demi Cond', arial;
     font-size: 2em;
 }
 
