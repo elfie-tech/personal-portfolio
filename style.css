@@ -115,18 +115,21 @@ html {
 }
 
 figure {
-    margin: 1rem;
+    margin: 2rem;
 }
 
 figure img {
  /* height: 500px; */
-    width: 395px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 figcaption {
     text-align: center;
     font-family: 'Roboto', sans-serif;
-    font-size: 2em;
+    font-size: 1.5em;
     color: #CFE5F7;
     padding-top: .5em;
 }
