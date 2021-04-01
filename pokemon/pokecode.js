@@ -18,8 +18,21 @@ async function getAPIData(url) {
 function loadPage() {
     getAPIData(`https://pokeapi.co/api/v2/pokemon/1`).then(
         (data) => {
-            console.log(data)
+            for (const singlePokemon of data.results) {
+                console.log(singlePokemon)
+                populatePokeCard(singlePokemon)
+            }
         }
     )
+}
+
+function populatePokeCard(singlePokemon) {
+    // use the same html as in the CodePen Card flip example
+    let pokeScene = document.createElement('div')
+    let pokeCard = document.createElement('div')
+    // make card front
+    // make card back
+    // append them all to pokeGrid
+    console.log(singlePokemon)
 }
 
