@@ -29,10 +29,32 @@ function loadPage() {
 function populatePokeCard(singlePokemon) {
     // use the same html as in the CodePen Card flip example
     let pokeScene = document.createElement('div')
+    pokeScene.className = 'scene'
     let pokeCard = document.createElement('div')
-    // make card front
-    // make card back
-    // append them all to pokeGrid
-    console.log(singlePokemon)
+    pokeCard.className = 'card'
+
+    pokeCard.appendChild(populateCardFront(singlePokemon))
+
+    pokeScene.appendChild(pokeCard)
+    pokeGrid.appendChild(pokeScene)
 }
 
+function populateCardFront(pokemon) {
+    let pokeFront = document.createElement('div')
+    pokeFront.className = 'card__face card__face--front'    
+    let frontLabel = document.createElement('p')
+    frontLabel.textContent = pokemon.name
+    let frontImage = document.createElement('img')
+    frontImage.src = 'images/001.png'
+    pokeFront.appendChild(frontLabel)
+    return pokeFront
+}
+
+function populateCardBack(pokemon) {
+    let pokeBack = document.createElement('div')
+    pokeBack.className = 'card__face card__face--back'
+    let backLabel = document.createElement('p')
+    backLabel.textContent = 'Back of Card'
+    pokeBack.appendChild(backLabel)
+    return pokeBack
+}
