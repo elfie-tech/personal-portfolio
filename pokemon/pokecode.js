@@ -58,3 +58,4 @@ function populateCardBack(pokemon) {
     pokeBack.appendChild(backLabel)
     return pokeBack
 }
+
