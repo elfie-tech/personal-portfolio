@@ -4,6 +4,7 @@ const fetchButton = document.querySelector('.fetchPokemonById')
 
 loadButton.addEventListener('click', () => {
     loadPage()
+    loadButton.style.display = 'none';
 })
 
 fetchButton.addEventListener('click', () => {
