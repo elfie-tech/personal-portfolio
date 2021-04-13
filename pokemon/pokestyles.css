@@ -9,7 +9,6 @@ header {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    height: 100vh;
 }
 
 button {
@@ -19,12 +18,14 @@ button {
     border-radius: 50%;
     background-color: #9dbbe7;
     border: none;
+    margin-top: 10vh;
 }
 
 h1 {
     text-align: center;
     padding: 1em;
     font-weight: bolder;
+    margin-top: 10vh;
 }
 
 .pokeGrid {
@@ -36,9 +37,10 @@ h1 {
 .scene {
     width: 200px;
     height: 260px;
-    border: 1px solid teal;
+    /* border: 1px solid teal; */
     margin: 8px;
     perspective: 600px;
+    /* border-radius: 25px; */
 }
 
 .card {
@@ -60,23 +62,39 @@ h1 {
     text-align: center;
     font-weight: bold;
     backface-visibility: hidden;
+    border: 2px solid black;
+    border-radius: 25px;
 }
 
 .card__face--front {
+    position: absolute;
     background: red;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    /* backface-visibility: hidden; */
 }
 
 .card__face--front img {
-    height: 65%;
-    width: 65%;
+    height: 170px;
+    width: 170px;
     margin: 1em;
+    padding: 10px;
+    border: 5px double black;
+    border-radius: 25px;
 }
 
 .card__face--back {
+    position: absolute;
     background: blue;
     transform: rotateY(180deg);
+    /* backface-visibility: hidden; */
+}
+
+p {
+    width: 85%;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 25px;
 }
