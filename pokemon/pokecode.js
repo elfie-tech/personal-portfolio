@@ -6,9 +6,8 @@ const fetchButton = document.querySelector('.fetchPokemonById')
 loadButton.addEventListener('click', () => {
     loadPage()
     loadButton.style.display = 'none';
-    
-    // TRY TO FIND HOW TO LINK BUTTON TO LOADED CONTENT SO THAT IT TRANSITIONS AUTOMATICALLY WHEN CLICKED. :)
 })
+
 
 //fetch by id - play with this if you want to
 /* fetchButton.addEventListener('click', () => {
@@ -31,7 +30,7 @@ async function getAPIData(url) {
 }
 
 function loadPage() {
-    getAPIData(`https://pokeapi.co/api/v2/pokemon?limit=25`).then(
+    getAPIData(`https://pokeapi.co/api/v2/pokemon?limit=50`).then(
         async (data) => {
             for (const singlePokemon of data.results) {
                 await getAPIData(singlePokemon.url).then(
