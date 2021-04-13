@@ -2,18 +2,22 @@ const pokeGrid = document.querySelector('.pokeGrid')
 const loadButton = document.querySelector('.loadPokemon')
 const fetchButton = document.querySelector('.fetchPokemonById')
 
+
 loadButton.addEventListener('click', () => {
     loadPage()
     loadButton.style.display = 'none';
+    
+    // TRY TO FIND HOW TO LINK BUTTON TO LOADED CONTENT SO THAT IT TRANSITIONS AUTOMATICALLY WHEN CLICKED. :)
 })
 
-fetchButton.addEventListener('click', () => {
+//fetch by id - play with this if you want to
+/* fetchButton.addEventListener('click', () => {
     let pokeId = prompt("Pokemon ID or Name:")
     console.log(pokeId)
     getAPIData(`https://pokeapi.co/api/v2/pokemon/${pokeId}`).then(
         data => populatePokeCard(data)
     ).catch(error => console.log(error))
-})
+}) */
 
 async function getAPIData(url) {
     try {
