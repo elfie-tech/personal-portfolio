@@ -4,28 +4,37 @@
     box-sizing: border-box;
 }
 
+html {
+    background-color: #EEEEEE;
+}
+
 header {
     display: flex;
-    align-items: center;
     justify-content: center;
-    flex-direction: column;
+    flex-direction: row;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
 }
 
 .buttons button {
-    width: 150px;
-    height: 150px;
+    width: 165px;
+    height: 165px;
     cursor: pointer;
     border-radius: 50%;
     background-color: #409dad;
     border: 5px double black;
-    margin-top: 10vh;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    /* font-size: large; */
 }
 
 h1 {
+    vertical-align: middle;
     text-align: center;
     padding: 1em;
     font-weight: bolder;
     margin-top: 10vh;
+    color: #3A3335;
 }
 
 .pokeGrid {
@@ -102,6 +111,7 @@ p {
     border: 2px solid black;
     border-radius: 25px;
     background-color: white;
+    color: #3A3335;
 }
 
 .card__face--back div {
