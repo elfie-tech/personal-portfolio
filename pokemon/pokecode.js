@@ -1,6 +1,7 @@
 const pokeGrid = document.querySelector('.pokeGrid')
 const loadButton = document.querySelector('.loadPokemon')
 const fetchButton = document.querySelector('.fetchPokemonById')
+const newButton = document.querySelector('.newPokemon')
 
 loadButton.addEventListener('click', () => {
     loadPage()
@@ -11,13 +12,38 @@ loadButton.addEventListener('click', () => {
 
 //fetch by id - play with this if you want to
 fetchButton.addEventListener('click', () => {
-    let pokeId = prompt("Pokemon ID or Name:")
+    let pokeId = prompt("Pokemon ID or Name:").toLowerCase()
     console.log(pokeId)
     getAPIData(`https://pokeapi.co/api/v2/pokemon/${pokeId}`).then(
         data => populatePokeCard(data)
     ).catch(error => console.log(error))
     fetchButton.style.display = 'none'
     loadButton.style.display = 'none'
+})
+
+class Pokemon {
+    constructor(name, height, weight, abilities, moves) {
+        this.id = 900
+        this.name = name
+        this.height = height
+        this.weight = weight
+        this.abilities = abilities
+        this.moves = moves
+    }
+}
+
+newButton.addEventListener('click', () => {
+    let pokeName = prompt("What is the name of your new Pokemon?")
+    let pokeHeight = prompt("Pokemon height?")
+    let pokeWeight = prompt("Pokemon weight?")
+    let newPokemon = new Pokemon(
+        pokeName,
+        pokeHeight,
+        pokeWeight,
+        ['eat', 'sleep'],
+        ['study', 'code', 'silence']
+    )
+    populatePokeCard(newPokemon)
 })
 
 async function getAPIData(url) {
@@ -97,6 +123,9 @@ function getImageFileName(pokemon) {
     if (pokemon.id < 10) pokeId = `00${pokemon.id}`
     if (pokemon.id > 9 && pokemon.id < 100) pokeId = `0${pokemon.id}`
     if (pokemon.id > 99 && pokemon.id < 810) pokemon.id
+    if (pokemon.id === 900) {
+        return 'images/pokeball.png'
+    }
 
     return `https://raw.githubusercontent.com/fanzeyi/pokemon.json/master/images/${pokeId}.png`
 }
