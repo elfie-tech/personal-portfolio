@@ -5,8 +5,9 @@ const newButton = document.querySelector('.newPokemon')
 
 loadButton.addEventListener('click', () => {
     loadPage()
-    loadButton.style.display = 'none'
+   /*  loadButton.style.display = 'none'
     fetchButton.style.display = 'none'
+    newButton.style.display = 'none' */
 })
 
 
@@ -17,16 +18,17 @@ fetchButton.addEventListener('click', () => {
     getAPIData(`https://pokeapi.co/api/v2/pokemon/${pokeId}`).then(
         data => populatePokeCard(data)
     ).catch(error => console.log(error))
-    fetchButton.style.display = 'none'
+    /* fetchButton.style.display = 'none'
     loadButton.style.display = 'none'
+    newButton.style.display = 'none' */
 })
 
 class Pokemon {
-    constructor(name, height, weight, abilities, moves) {
+    constructor(name, height, /* weight, */ abilities, moves) {
         this.id = 900
         this.name = name
         this.height = height
-        this.weight = weight
+        /*  this.weight = weight */
         this.abilities = abilities
         this.moves = moves
     }
@@ -35,15 +37,18 @@ class Pokemon {
 newButton.addEventListener('click', () => {
     let pokeName = prompt("What is the name of your new Pokemon?")
     let pokeHeight = prompt("Pokemon height?")
-    let pokeWeight = prompt("Pokemon weight?")
+    /* let pokeWeight = prompt("Pokemon weight?") */
     let newPokemon = new Pokemon(
         pokeName,
         pokeHeight,
-        pokeWeight,
+        /* pokeWeight, */
         ['eat', 'sleep'],
         ['study', 'code', 'silence']
     )
     populatePokeCard(newPokemon)
+   /*  fetchButton.style.display = 'none'
+    loadButton.style.display = 'none'
+    newButton.style.display = 'none' */
 })
 
 async function getAPIData(url) {
