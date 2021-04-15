@@ -75,7 +75,11 @@ function populateCardBack(pokemon) {
     let pokeBack = document.createElement('div')
     pokeBack.className = 'card__face card__face--back'
     let backLabel = document.createElement('p')
-    backLabel.textContent = `Moves: ${pokemon.moves.length}`
+
+
+    backLabel.textContent = `Moves: ${pokemon.moves.length} + \n Abilities: ${pokemon.abilities.length}`
+
+
     pokeBack.appendChild(backLabel)
     return pokeBack
 }
