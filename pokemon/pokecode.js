@@ -2,21 +2,23 @@ const pokeGrid = document.querySelector('.pokeGrid')
 const loadButton = document.querySelector('.loadPokemon')
 const fetchButton = document.querySelector('.fetchPokemonById')
 
-
 loadButton.addEventListener('click', () => {
     loadPage()
-    loadButton.style.display = 'none';
+    loadButton.style.display = 'none'
+    fetchButton.style.display = 'none'
 })
 
 
 //fetch by id - play with this if you want to
-/* fetchButton.addEventListener('click', () => {
+fetchButton.addEventListener('click', () => {
     let pokeId = prompt("Pokemon ID or Name:")
     console.log(pokeId)
     getAPIData(`https://pokeapi.co/api/v2/pokemon/${pokeId}`).then(
         data => populatePokeCard(data)
     ).catch(error => console.log(error))
-}) */
+    fetchButton.style.display = 'none'
+    loadButton.style.display = 'none'
+})
 
 async function getAPIData(url) {
     try {
@@ -74,12 +76,18 @@ function populateCardFront(pokemon) {
 function populateCardBack(pokemon) {
     let pokeBack = document.createElement('div')
     pokeBack.className = 'card__face card__face--back'
-    let backLabel = document.createElement('p')
+    let backLabel = document.createElement('div')
+    let backLabelMoves = document.createElement('p')
+    let backLabelAbilities = document.createElement('p')
+    let backLabelHeight = document.createElement('p')
 
+    backLabelMoves.textContent = `Moves: ${pokemon.moves.length}`
+    backLabelAbilities.textContent = `Abilities: ${pokemon.abilities.length}`
+    backLabelHeight.textContent = `Height: ${pokemon.height}`
 
-    backLabel.textContent = `Moves: ${pokemon.moves.length} + \n Abilities: ${pokemon.abilities.length}`
-
-
+    backLabel.appendChild(backLabelMoves)
+    backLabel.appendChild(backLabelAbilities)
+    backLabel.appendChild(backLabelHeight)
     pokeBack.appendChild(backLabel)
     return pokeBack
 }
