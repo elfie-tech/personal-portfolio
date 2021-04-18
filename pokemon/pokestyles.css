@@ -37,6 +37,9 @@ h1 {
     color: #3A3335;
 }
 
+
+/* CARDS START */
+
 .pokeGrid {
     display: flex;
     flex-wrap: wrap;
@@ -121,6 +124,11 @@ p {
     justify-content: center;
     width: 85%;
 }
+
+
+
+/* CARDS END */
+
 
 footer {
     display: flex;
