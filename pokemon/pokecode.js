@@ -35,15 +35,17 @@ class Pokemon {
 }
 
 newButton.addEventListener('click', () => {
-    let pokeName = prompt("What is the name of your new Pokemon?")
-    let pokeHeight = prompt("Pokemon height?")
+    let pokeName = prompt("Name:")
+    let pokeHeight = prompt("Height:")
+    let pokeAbilities = prompt("Abilities (enter each ability separated with spaces):")
+    let pokeMoves = prompt("Moves (enter each move separated with spaces):")
     /* let pokeWeight = prompt("Pokemon weight?") */
     let newPokemon = new Pokemon(
         pokeName,
         pokeHeight,
         /* pokeWeight, */
-        ['eat', 'sleep'],
-        ['study', 'code', 'silence']
+        pokeAbilities,
+        pokeMoves
     )
     populatePokeCard(newPokemon)
    /*  fetchButton.style.display = 'none'
@@ -129,8 +131,21 @@ function getImageFileName(pokemon) {
     if (pokemon.id > 9 && pokemon.id < 100) pokeId = `0${pokemon.id}`
     if (pokemon.id > 99 && pokemon.id < 810) pokemon.id
     if (pokemon.id === 900) {
-        return 'images/pokeball.png'
+        return `https://cdn.pixabay.com/photo/2016/07/23/13/18/pokemon-1536849_1280.png`
     }
 
     return `https://raw.githubusercontent.com/fanzeyi/pokemon.json/master/images/${pokeId}.png`
 }
+
+
+
+
+/* 
+- Figure out how to add a load more button
+- This might be a good page to look at for this:  https://www.thatsoftwaredude.com/content/10392/how-to-implement-a-load-more-button-in-javascript 
+- Figure out how to get rid of loaded page when you've clicked other buttons
+  - Maybe this could be done with a click event that says:
+    When clicked, removed loadPage()??
+- When creating your own pokemon, the abilities and moves don't insert the amount of moves and abilities that they should.  How can I fix this?
+*/
+
