@@ -20,15 +20,6 @@ header {
 }
 
 .buttons button {
-/*     width: 165px;
-    height: 165px;
-    cursor: pointer;
-    border-radius: 50%;
-    background-color: #409dad;
-    border: 5px double black;
-    margin-top: 5vh;
-    margin-bottom: 5vh; */
-
     background-color:rgba(255, 255, 255, 0.3);
     border: none;
     color: white;
@@ -148,7 +139,7 @@ h1 {
 
 .card__face--front {
     position: absolute;
-    background: #2a75bb;
+    background: #3c5aa6;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -170,7 +161,7 @@ h1 {
     align-items: center;
     justify-content: center;
     position: absolute;
-    background: #2a75bb;
+    background: #3c5aa6;
     transform: rotateY(180deg);
     backface-visibility: hidden;
 }
