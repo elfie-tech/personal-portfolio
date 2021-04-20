@@ -55,9 +55,9 @@ newButton.addEventListener('click', () => {
 
 async function getAPIData(url) {
     try {
-        const response = await fetch(url) // try getting data from the API at the url provided
-        const data = await response.json() //convert the response into JSON
-        return data //return the data from the function to whoever called it
+        const response = await fetch(url)
+        const data = await response.json()
+        return data
     } catch (error) {
         console.log(error)
         alert('Could Not Find Data')
@@ -77,7 +77,6 @@ function loadPage() {
 }
 
 function populatePokeCard(singlePokemon) {
-    //use the same html as in the CodePen Card flip example
     let pokeScene = document.createElement('div')
     pokeScene.className = 'scene'
     let pokeCard = document.createElement('div')
@@ -85,11 +84,8 @@ function populatePokeCard(singlePokemon) {
     pokeCard.addEventListener('click', () => {
         pokeCard.classList.toggle('is-flipped')
     })
-    //make the card front
     pokeCard.appendChild(populateCardFront(singlePokemon))
-    //make the card back
     pokeCard.appendChild(populateCardBack(singlePokemon))
-    //append them all to pokeGrid
     pokeScene.appendChild(pokeCard)
     pokeGrid.appendChild(pokeScene)
 }
@@ -103,6 +99,9 @@ function populateCardFront(pokemon) {
     frontImage.src = getImageFileName(pokemon)
     pokeFront.appendChild(frontImage)
     pokeFront.appendChild(frontLabel)
+    
+    /* pokeFront.classList.add('pokemon.types[0].type.name') */
+
     return pokeFront
 }
 
@@ -122,6 +121,15 @@ function populateCardBack(pokemon) {
     backLabel.appendChild(backLabelAbilities)
     backLabel.appendChild(backLabelHeight)
     pokeBack.appendChild(backLabel)
+
+    pokemon.types.forEach((pokeType) => {
+        console.log(pokeType)
+        let backType = document.createElement('p')
+        backType.textContent = pokeType.type.name
+        pokeBack.appendChild(backType)
+        backLabel.appendChild(backType)
+    })
+
     return pokeBack
 }
 
