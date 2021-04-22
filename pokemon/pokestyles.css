@@ -146,29 +146,6 @@ h1 {
     flex-direction: column;
 }
 
-/*
-Creating Classes to Change Card Background Color
-
-.grass {
-    background: green;
-}
-
-.fire {
-    background: red;
-} 
-
-.water {
-    box-shadow: 10px 5px 5px blue;
-}
-
-.bug {
-    border: 2px solid chartreuse;
-}
-
-*/
-
-
-
 .card__face--front img {
     height: 170px;
     width: 170px;
