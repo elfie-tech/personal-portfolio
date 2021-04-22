@@ -1,10 +1,16 @@
+import { removeChildren } from '../utils/index.js'
+
 const pokeGrid = document.querySelector('.pokeGrid')
 const loadButton = document.querySelector('.loadPokemon')
 const fetchButton = document.querySelector('.fetchPokemonById')
 const newButton = document.querySelector('.newPokemon')
 
+let offset = 0
+let limit = 25
+
 loadButton.addEventListener('click', () => {
-    loadPage()
+    loadPage(offset, limit)
+    offset = offset + limit
    /*  loadButton.style.display = 'none'
     fetchButton.style.display = 'none'
     newButton.style.display = 'none' */
@@ -64,8 +70,8 @@ async function getAPIData(url) {
     }
 }
 
-function loadPage() {
-    getAPIData(`https://pokeapi.co/api/v2/pokemon?limit=25`).then(
+function loadPage(offset, limit) {
+    getAPIData(`https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`).then(
         async (data) => {
             for (const singlePokemon of data.results) {
                 await getAPIData(singlePokemon.url).then(
