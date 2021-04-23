@@ -11,53 +11,72 @@ let limit = 25
 loadButton.addEventListener('click', () => {
     loadPage(offset, limit)
     offset = offset + limit
-   /*  loadButton.style.display = 'none'
-    fetchButton.style.display = 'none'
-    newButton.style.display = 'none' */
+    loadButton.textContent = `Load More Pokemon`
 })
 
-
-//fetch by id - play with this if you want to
 fetchButton.addEventListener('click', () => {
+  removeChildren(pokeGrid)
     let pokeId = prompt("Pokemon ID or Name:").toLowerCase()
-    console.log(pokeId)
-    getAPIData(`https://pokeapi.co/api/v2/pokemon/${pokeId}`).then(
-        data => populatePokeCard(data)
-    ).catch(error => console.log(error))
-    /* fetchButton.style.display = 'none'
-    loadButton.style.display = 'none'
-    newButton.style.display = 'none' */
+    getAPIData(`https://pokeapi.co/api/v2/pokemon/${pokeId}`)
+    .then((data) => populatePokeCard(data))
+    .catch((error) => console.log(error))
 })
 
 class Pokemon {
-    constructor(name, height, /* weight, */ abilities, moves) {
-        this.id = 900
-        this.name = name
-        this.height = height
-        /*  this.weight = weight */
-        this.abilities = abilities
-        this.moves = moves
-    }
+  constructor(name, height, weight, abilities, moves, types, stats) {
+    this.id = 900
+    this.name = name
+    this.height = height
+    this.weight = weight
+    this.abilities = abilities
+    this.moves = moves
+    this.types = types
+    this.stats = stats
+  }
 }
 
 newButton.addEventListener('click', () => {
-    let pokeName = prompt("Name:")
-    let pokeHeight = prompt("Height:")
-    let pokeAbilities = prompt("Abilities (enter each ability separated with spaces):")
-    let pokeMoves = prompt("Moves (enter each move separated with spaces):")
-    /* let pokeWeight = prompt("Pokemon weight?") */
-    let newPokemon = new Pokemon(
-        pokeName,
-        pokeHeight,
-        /* pokeWeight, */
-        pokeAbilities,
-        pokeMoves
-    )
-    populatePokeCard(newPokemon)
-   /*  fetchButton.style.display = 'none'
-    loadButton.style.display = 'none'
-    newButton.style.display = 'none' */
+  removeChildren(pokeGrid)
+  let pokeName = prompt('What is the name of your new Pokemon?')
+  //let pokeHeight = prompt('Pokemon height?')
+  //let pokeWeight = prompt('Pokemon weight?')
+  let pokeAbilities = prompt(
+    'What are your Pokemon abilities? (use a comma separated list',
+  )
+  let abilitiesArray = getAbilitiesArray(pokeAbilities)
+  let newPokemon = new Pokemon(
+    pokeName,
+    234,
+    3000,
+    abilitiesArray,
+    ['study', 'code', 'silence'],
+    [
+      {
+        type: {
+          name: 'normal',
+        },
+      },
+    ],
+    [{
+      base_stat: 100,
+      stat: {
+        name: "hp"
+      }
+    }]
+  )
+  populatePokeCard(newPokemon)
 })
+  
+function getAbilitiesArray(commaString) {
+  let tempArray = commaString.split(',')
+  return tempArray.map((abilityName) => {
+    return {
+      ability: {
+        name: abilityName,
+      },
+    }
+  })
+}
 
 async function getAPIData(url) {
     try {
@@ -71,15 +90,16 @@ async function getAPIData(url) {
 }
 
 function loadPage(offset, limit) {
-    getAPIData(`https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`).then(
-        async (data) => {
-            for (const singlePokemon of data.results) {
-                await getAPIData(singlePokemon.url).then(
-                    (pokeData) => populatePokeCard(pokeData)
-                )
-            }
-        }
-    )
+  removeChildren(pokeGrid)
+  getAPIData(
+    `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`,
+  ).then(async (data) => {
+    for (const singlePokemon of data.results) {
+      await getAPIData(singlePokemon.url).then((pokeData) =>
+        populatePokeCard(pokeData),
+      )
+    }
+  })
 }
 
 function populatePokeCard(singlePokemon) {
@@ -92,6 +112,7 @@ function populatePokeCard(singlePokemon) {
     })
     pokeCard.appendChild(populateCardFront(singlePokemon))
     pokeCard.appendChild(populateCardBack(singlePokemon))
+    
     pokeScene.appendChild(pokeCard)
     pokeGrid.appendChild(pokeScene)
 }
@@ -103,8 +124,10 @@ function populateCardFront(pokemon) {
     frontLabel.textContent = pokemon.name
     let frontImage = document.createElement('img')
     frontImage.src = getImageFileName(pokemon)
+/*     frontImage.addEventListener('error', () => (frontImage.src = 'https://cdn.pixabay.com/photo/2016/07/23/13/18/pokemon-1536849_1280.png'),) */
     pokeFront.appendChild(frontImage)
     pokeFront.appendChild(frontLabel)
+    
     
     /* pokeFront.classList.add('pokemon.types[0].type.name') */
 
@@ -155,8 +178,6 @@ function getImageFileName(pokemon) {
 
 
 /* 
-- Figure out how to add a load more button
-- This might be a good page to look at for this:  https://www.thatsoftwaredude.com/content/10392/how-to-implement-a-load-more-button-in-javascript 
 - Figure out how to get rid of loaded page when you've clicked other buttons
   - Maybe this could be done with a click event that says:
     When clicked, removed loadPage()??
