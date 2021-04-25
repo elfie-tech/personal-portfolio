@@ -1,18 +1,83 @@
 * {
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+    margin: 1em;
+}
+
+.buttonHeader {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#seniorityButton {
+    border: none;
+    background-color: white;
+    cursor: pointer;
+    color: purple;
+    font-size: larger;
+}
+
+#seniorityButton:hover {
+    box-shadow: 3px 3px 3px #575858;
+}
+
+#republicans {
+    border: none;
+    background-color: white;
+    cursor: pointer;
+    color: red;
+    font-size: larger;
+}
+
+#republicans:hover {
+    box-shadow: 3px 3px 3px #575858;
+}
+
+#democrats {
+    border: none;
+    background-color: white;
+    cursor: pointer;
+    color: blue;
+    font-size: larger;
+}
+
+#democrats:hover {
+    box-shadow: 3px 3px 3px #575858;
+}
+
+#independents {
+    border: none;
+    background-color: white;
+    cursor: pointer;
+    color: green;
+    font-size: larger;
+}
+
+#independents:hover {
+    box-shadow: 3px 3px 3px #575858;
 }
 
 .congressGrid {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
+    margin: 10px;
 }
 
 .figureDiv {
-    margin: 6px;
-    padding: 6px;
-    border: 1px solid red;
-    box-shadow: 3px 3px 3px black;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 125px;
+    height: 225px;
+    box-shadow: 3px 3px 3px #575858;
+    margin: 10px;
 }
 
 figure {
@@ -21,17 +86,25 @@ figure {
 
 figcaption {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: space-between;
+    text-align: center;
 }
 
 .fa-republican {
+    display: flex;
+    justify-content: end;
     color: red;
+    padding-top: 15px;
 }
 
 .fa-democrat {
     color: blue;
+    padding-top: 15px;
 }
 
 .fa-mitten {
     color: green;
+    padding: 15px;
 }
