@@ -1,11 +1,37 @@
 * {
     margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
 
 .congressGrid {
     display: flex;
     flex-wrap: wrap;
-    margin: 1em;
+}
+
+.figureDiv {
+    margin: 6px;
+    padding: 6px;
+    border: 1px solid red;
+    box-shadow: 3px 3px 3px black;
+}
+
+figure {
+    width: 100px;
+}
+
+figcaption {
+    display: flex;
+    justify-content: space-between;
+}
+
+.fa-republican {
+    color: red;
+}
+
+.fa-democrat {
+    color: blue;
+}
+
+.fa-mitten {
+    color: green;
 }
