@@ -126,6 +126,7 @@ function populateCardFront(pokemon) {
       'error', 
       () => (frontImage.src = 'https://cdn.pixabay.com/photo/2016/07/23/13/18/pokemon-1536849_1280.png'),
       )
+
     pokeFront.appendChild(frontImage)
     pokeFront.appendChild(frontLabel)
     
@@ -140,13 +141,17 @@ function populateCardBack(pokemon) {
     let backLabelAbilities = document.createElement('p')
     let pokeHeight = document.createElement('p')
     pokeHeight.textContent = `Height: ${pokemon.height / 10}m`
-
     let pokeWeight = document.createElement('p')
     pokeWeight.textContent = `Weight: ${pokemon.weight / 10} kg`
+    let pokeBackId = document.createElement('p')
+    pokeBackId.textContent = `ID: 0${pokemon.id}`
 
     backLabelMoves.textContent = `Moves: ${pokemon.moves.length}`
     backLabelAbilities.textContent = `Abilities: ${pokemon.abilities.length}`
 
+    
+    pokeBack.appendChild(pokeBackId)
+    backLabel.appendChild(pokeBackId)
     backLabel.appendChild(backLabelMoves)
     backLabel.appendChild(backLabelAbilities)
     pokeBack.appendChild(backLabel)
