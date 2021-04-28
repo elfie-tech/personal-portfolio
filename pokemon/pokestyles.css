@@ -15,8 +15,16 @@ html, body {
 header {
     display: flex;
     justify-content: flex-start;
-    flex-direction: row;
+    flex-direction: column;
     background-color: #2a75bb;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 25px;
+    padding: 1em;
 }
 
 .buttons button {
@@ -38,64 +46,6 @@ h1 {
     font-weight: 400;
     color: white;
 }
-
-
-/* START 3d EFFect */
-.buttons {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-evenly;
-    height: 75vh;
-}
-
-.mainPokeCards {
-    text-align: center;
-    color: white;
-    font-size: larger;
-    width: 320px;
-    height: 420px;
-    perspective: 1000px;
-}
-
-.mainPokeCards div {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 1em;
-    color: white;
-}
-
-.mainPokeCards:hover .flipPokeCards {
-    transform: rotateY(180deg);
-}
-
-.flipPokeCards {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    transition: transform 1s;
-    transform-style: preserve-3d;
-}
-
-.pokemonCardFront, .pokemonCardBack {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: #3c5aa6;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
-}
-
-.pokemonCardBack {
-    transform: rotateY(180deg);
-}
-
-/* End 3D EFFECT */
-
 
 /* CARDS START */
 
