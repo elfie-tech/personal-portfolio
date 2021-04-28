@@ -38,8 +38,6 @@ class Pokemon {
 newButton.addEventListener('click', () => {
   removeChildren(pokeGrid)
   let pokeName = prompt('What is the name of your new Pokemon?')
-  //let pokeHeight = prompt('Pokemon height?')
-  //let pokeWeight = prompt('Pokemon weight?')
   let pokeAbilities = prompt(
     'What are your Pokemon abilities? (use a comma separated list',
   )
@@ -124,7 +122,10 @@ function populateCardFront(pokemon) {
     frontLabel.textContent = pokemon.name
     let frontImage = document.createElement('img')
     frontImage.src = getImageFileName(pokemon)
-/*     frontImage.addEventListener('error', () => (frontImage.src = 'https://cdn.pixabay.com/photo/2016/07/23/13/18/pokemon-1536849_1280.png'),) */
+    frontImage.addEventListener(
+      'error', 
+      () => (frontImage.src = 'https://cdn.pixabay.com/photo/2016/07/23/13/18/pokemon-1536849_1280.png'),
+      )
     pokeFront.appendChild(frontImage)
     pokeFront.appendChild(frontLabel)
     
@@ -151,13 +152,14 @@ function populateCardBack(pokemon) {
     backLabel.appendChild(backLabelHeight)
     pokeBack.appendChild(backLabel)
 
-    pokemon.types.forEach((pokeType) => {
+
+/*     pokemon.types.forEach((pokeType) => {
         console.log(pokeType)
         let backType = document.createElement('p')
         backType.textContent = pokeType.type.name
         pokeBack.appendChild(backType)
         backLabel.appendChild(backType)
-    })
+    }) */
 
     return pokeBack
 }
@@ -173,14 +175,3 @@ function getImageFileName(pokemon) {
 
     return `https://raw.githubusercontent.com/fanzeyi/pokemon.json/master/images/${pokeId}.png`
 }
-
-
-
-
-/* 
-- Figure out how to get rid of loaded page when you've clicked other buttons
-  - Maybe this could be done with a click event that says:
-    When clicked, removed loadPage()??
-- When creating your own pokemon, the abilities and moves don't insert the amount of moves and abilities that they should.  How can I fix this?
-*/
-
