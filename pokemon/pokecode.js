@@ -27,6 +27,7 @@ class Pokemon {
     this.id = 900
     this.name = name
     this.height = height
+    this.weight = weight
     this.abilities = abilities
     this.moves = moves
     this.types = types
@@ -37,14 +38,14 @@ class Pokemon {
 newButton.addEventListener('click', () => {
   removeChildren(pokeGrid)
   let pokeName = prompt('What is the name of your new Pokemon?')
+  let pokeAbilities = prompt('What are your Pokemon abilities? (use a comma separated list',)
   let pokeHeight = prompt('What is the height of your new Pokemon?')
-  let pokeAbilities = prompt(
-    'What are your Pokemon abilities? (use a comma separated list',
-  )
+  let pokeWeight = prompt('What is the weight of your new Pokemon?')
   let abilitiesArray = getAbilitiesArray(pokeAbilities)
   let newPokemon = new Pokemon(
     pokeName,
     pokeHeight,
+    pokeWeight,
     abilitiesArray,
     ['study', 'code', 'silence'],
     [
@@ -128,9 +129,6 @@ function populateCardFront(pokemon) {
     pokeFront.appendChild(frontImage)
     pokeFront.appendChild(frontLabel)
     
-    
-    /* pokeFront.classList.add('pokemon.types[0].type.name') */
-
     return pokeFront
 }
 
@@ -140,25 +138,22 @@ function populateCardBack(pokemon) {
     let backLabel = document.createElement('div')
     let backLabelMoves = document.createElement('p')
     let backLabelAbilities = document.createElement('p')
-    let backLabelHeight = document.createElement('p')
+    let pokeHeight = document.createElement('p')
+    pokeHeight.textContent = `Height: ${pokemon.height / 10}m`
+
+    let pokeWeight = document.createElement('p')
+    pokeWeight.textContent = `Weight: ${pokemon.weight / 10} kg`
 
     backLabelMoves.textContent = `Moves: ${pokemon.moves.length}`
     backLabelAbilities.textContent = `Abilities: ${pokemon.abilities.length}`
-    backLabelHeight.textContent = `Height: ${pokemon.height}`
 
     backLabel.appendChild(backLabelMoves)
     backLabel.appendChild(backLabelAbilities)
-    backLabel.appendChild(backLabelHeight)
     pokeBack.appendChild(backLabel)
-
-
-/*     pokemon.types.forEach((pokeType) => {
-        console.log(pokeType)
-        let backType = document.createElement('p')
-        backType.textContent = pokeType.type.name
-        pokeBack.appendChild(backType)
-        backLabel.appendChild(backType)
-    }) */
+    pokeBack.appendChild(pokeHeight)
+    backLabel.appendChild(pokeHeight)
+    pokeBack.appendChild(pokeWeight)
+    backLabel.appendChild(pokeWeight)
 
     return pokeBack
 }
