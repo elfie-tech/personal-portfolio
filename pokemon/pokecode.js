@@ -27,7 +27,6 @@ class Pokemon {
     this.id = 900
     this.name = name
     this.height = height
-    this.weight = weight
     this.abilities = abilities
     this.moves = moves
     this.types = types
@@ -38,14 +37,14 @@ class Pokemon {
 newButton.addEventListener('click', () => {
   removeChildren(pokeGrid)
   let pokeName = prompt('What is the name of your new Pokemon?')
+  let pokeHeight = prompt('What is the height of your new Pokemon?')
   let pokeAbilities = prompt(
     'What are your Pokemon abilities? (use a comma separated list',
   )
   let abilitiesArray = getAbilitiesArray(pokeAbilities)
   let newPokemon = new Pokemon(
     pokeName,
-    234,
-    3000,
+    pokeHeight,
     abilitiesArray,
     ['study', 'code', 'silence'],
     [
