@@ -23,9 +23,10 @@ fetchButton.addEventListener('click', () => {
 })
 
 class Pokemon {
-  constructor(name, height, weight, abilities, moves, types, stats) {
+  constructor(name, id, height, weight, abilities, moves, types, stats) {
     this.id = 900
     this.name = name
+    this.id = id
     this.height = height
     this.weight = weight
     this.abilities = abilities
@@ -38,12 +39,14 @@ class Pokemon {
 newButton.addEventListener('click', () => {
   removeChildren(pokeGrid)
   let pokeName = prompt('What is the name of your new Pokemon?')
+  let pokeId = prompt('Give your Pokemon an ID:')
   let pokeAbilities = prompt('What are your Pokemon abilities? (use a comma separated list',)
   let pokeHeight = prompt('What is the height of your new Pokemon?')
   let pokeWeight = prompt('What is the weight of your new Pokemon?')
   let abilitiesArray = getAbilitiesArray(pokeAbilities)
   let newPokemon = new Pokemon(
     pokeName,
+    pokeId,
     pokeHeight,
     pokeWeight,
     abilitiesArray,
