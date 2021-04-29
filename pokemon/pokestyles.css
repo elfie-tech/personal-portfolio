@@ -86,6 +86,7 @@ h1 {
     font-weight: bold;
     border: 2px solid black;
     border-radius: 25px;
+    backface-visibility: hidden;
 }
 
 .card__face--front {
@@ -115,7 +116,6 @@ h1 {
     position: absolute;
     background: #3c5aa6;
     transform: rotateY(180deg);
-    backface-visibility: hidden;
 }
 
 p {
