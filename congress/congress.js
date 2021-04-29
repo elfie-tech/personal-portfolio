@@ -26,7 +26,6 @@ independentButton.addEventListener('click', () => {
 
 /* missedVotes.addEventListener('click', () => {
     populateCongressDiv
-    missedVotesMember(senators)
     //alert(missedVotesMember(senators))
 }
 ) */
@@ -50,10 +49,10 @@ function populateCongressDiv(simplifiedList) {
 
         figImg.src = person.imgURL
         figCaption.textContent = person.name
-        figCaption.appendChild(partyIcon)
         personFig.appendChild(figImg)
         personFig.appendChild(figCaption)
         personDiv.appendChild(personFig)
+        personDiv.appendChild(partyIcon)
         congressGrid.appendChild(personDiv)
     })
 }
