@@ -15,52 +15,19 @@ h1 {
     align-items: center;
 }
 
-#seniorityButton {
+button {
     border: none;
     background-color: white;
     cursor: pointer;
-    color: purple;
+    color: black;
     font-size: larger;
+    padding: 5px;
 }
 
-#seniorityButton:hover {
+button:hover {
     box-shadow: 3px 3px 3px #575858;
-}
-
-#republicans {
-    border: none;
-    background-color: white;
-    cursor: pointer;
-    color: red;
-    font-size: larger;
-}
-
-#republicans:hover {
-    box-shadow: 3px 3px 3px #575858;
-}
-
-#democrats {
-    border: none;
-    background-color: white;
-    cursor: pointer;
-    color: blue;
-    font-size: larger;
-}
-
-#democrats:hover {
-    box-shadow: 3px 3px 3px #575858;
-}
-
-#independents {
-    border: none;
-    background-color: white;
-    cursor: pointer;
-    color: green;
-    font-size: larger;
-}
-
-#independents:hover {
-    box-shadow: 3px 3px 3px #575858;
+    border-radius: 5%;
+    padding: 5px;
 }
 
 .congressGrid {
@@ -85,7 +52,7 @@ figure {
 }
 
 figure img {
-    border-radius: 5%;
+    border-radius: 50%;
     box-shadow: 3px 3px 3px #575858;
     margin: 5px;
 }
