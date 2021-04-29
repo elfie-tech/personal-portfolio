@@ -5,7 +5,7 @@ import { removeChildren } from '../utils/index.js'
 const congressGrid = document.querySelector('.congressGrid')
 const seniorityButton = document.querySelector('#seniorityButton')
 const republicansButton = document.querySelector('#republicans')
-/* const missedVotes = document.querySelector('#missedVotes') */
+const missedVotes = document.querySelector('#missedVotes')
 const democratButton = document.querySelector('#democrats')
 const independentButton = document.querySelector('#independents')
 
@@ -24,11 +24,10 @@ independentButton.addEventListener('click', () => {
     populateCongressDiv(filterCongressPeople(senators, 'ID'))
 })
 
-/* missedVotes.addEventListener('click', () => {
-    populateCongressDiv
-    //alert(missedVotesMember(senators))
+missedVotes.addEventListener('click', () => {
+    populateCongressDiv(missedVotesMember(senators))
 }
-) */
+)
 
 seniorityButton.addEventListener('click', () => {
     removeChildren(congressGrid)
@@ -79,9 +78,9 @@ const filterCongressPeople = (chamber, politicalParty) => {
     return getSimplifiedPeople(chamber).filter(member => member.party === politicalParty)
 }
 
-/* const missedVotesMember = (chamber) => {
+const missedVotesMember = (chamber) => {
     const highestMissedVotesPerson = getSimplifiedPeople(chamber).reduce((acc, member) => acc.missed_votes_pct > member.missed_votes_pct ? acc : member)
     return getSimplifiedPeople(chamber).filter((person) => person.missed_votes_pct === highestMissedVotesPerson.missed_votes_pct)
-} */
+}
 
 populateCongressDiv(getSimplifiedPeople(senators))
