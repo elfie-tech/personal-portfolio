@@ -20,9 +20,6 @@ Misc. color: #85C5F5;
     padding: 0;
 }
 
-
-
-
 /* styles anchor/link tags */
 a {
     text-decoration: none;
@@ -41,9 +38,6 @@ html {
     box-sizing: border-box;
     scroll-behavior: smooth;
 }
-
-
-
 
 /* START NAV STYLING */
 #navbar {
@@ -68,8 +62,6 @@ html {
     transition: transform 0.3x(ease-out);
 }
 /* END NAV STYLING */
-
-
 
 
 /* START WELCOME STYLING */
@@ -101,8 +93,6 @@ html {
 /* END WELCOME STYLING */
 
 
-
-
 /* START PROJECT STYLING */
 #projects {
     display: flex;
@@ -113,9 +103,11 @@ html {
 .project-grid {
     display: flex;
     flex-wrap: wrap;
+    align-content: center;
     justify-content: center;
-    background-color: #3F5E75;
+    /* background-color: #3F5E75; */
     padding: 1em;
+    height: 100vh;
 }
 
 figure {
@@ -123,23 +115,22 @@ figure {
 }
 
 figure img {
- /* height: 500px; */
     width: 300px;
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 50%;
 }
 
 figcaption {
     text-align: center;
     font-family: 'Roboto', sans-serif;
     font-size: 1.5em;
-    color: #CFE5F7;
+    /* color: #CFE5F7; */
+    color: #3F5E75;
     padding-top: .5em;
 }
 /* END PROJECT STYLING */
-
-
 
 
 /* START CONTACT STYLING */
@@ -172,8 +163,6 @@ figcaption {
     transition: transform 0.3x(ease-out);
 }
 /* END CONTACT STYLING */
-
-
 
 
 footer {
