@@ -170,7 +170,7 @@ function getImageFileName(pokemon) {
     let pokeId
     if (pokemon.id < 10) pokeId = `00${pokemon.id}`
     if (pokemon.id > 9 && pokemon.id < 100) pokeId = `0${pokemon.id}`
-    if (pokemon.id > 99 && pokemon.id < 810) pokemon.id
+    if (pokemon.id > 99 && pokemon.id < 810) pokeId = pokemon.id
     if (pokemon.id === 900) {
         return `https://cdn.pixabay.com/photo/2016/07/23/13/18/pokemon-1536849_1280.png`
     }
