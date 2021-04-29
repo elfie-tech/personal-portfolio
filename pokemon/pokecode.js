@@ -39,7 +39,7 @@ class Pokemon {
 newButton.addEventListener('click', () => {
   removeChildren(pokeGrid)
   let pokeName = prompt('What is the name of your new Pokemon?')
-  let pokeId = prompt('Give your Pokemon an ID:')
+  let pokeId = 900
   let pokeAbilities = prompt('What are your Pokemon abilities? (use a comma separated list',)
   let pokeHeight = prompt('What is the height of your new Pokemon?')
   let pokeWeight = prompt('What is the weight of your new Pokemon?')
