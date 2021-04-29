@@ -26,8 +26,7 @@ independentButton.addEventListener('click', () => {
 
 missedVotes.addEventListener('click', () => {
     populateCongressDiv(missedVotesMember(senators))
-}
-)
+})
 
 seniorityButton.addEventListener('click', () => {
     removeChildren(congressGrid)
