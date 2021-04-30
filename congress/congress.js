@@ -42,15 +42,18 @@ function populateCongressDiv(simplifiedList) {
         let figCaption = document.createElement('figcaption')
         let partyIcon = document.createElement('i')
         if (person.party === 'R') partyIcon.className = 'fas fa-republican'
+        personDiv.style.backgroundColor = '#9D2100'
         if (person.party === 'D') partyIcon.className = 'fas fa-democrat'
+        personDiv.style.backgroundColor = "#1B2682"
         if (person.party === 'ID') partyIcon.className = 'fas fa-mitten'
 
         figImg.src = person.imgURL
         figCaption.textContent = person.name
+        personFig.appendChild(partyIcon)
         personFig.appendChild(figImg)
         personFig.appendChild(figCaption)
         personDiv.appendChild(personFig)
-        personDiv.appendChild(partyIcon)
+
         congressGrid.appendChild(personDiv)
     })
 }
@@ -81,5 +84,7 @@ const missedVotesMember = (chamber) => {
     const highestMissedVotesPerson = getSimplifiedPeople(chamber).reduce((acc, member) => acc.missed_votes_pct > member.missed_votes_pct ? acc : member)
     return getSimplifiedPeople(chamber).filter((person) => person.missed_votes_pct === highestMissedVotesPerson.missed_votes_pct)
 }
+
+
 
 populateCongressDiv(getSimplifiedPeople(senators))

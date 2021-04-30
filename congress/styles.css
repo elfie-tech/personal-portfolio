@@ -4,30 +4,50 @@
     box-sizing: border-box;
 }
 
-h1 {
+h1, p {
     text-align: center;
     margin: 1em;
 }
 
 .buttonHeader {
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
 button {
-    border: none;
-    background-color: white;
-    cursor: pointer;
-    color: black;
+    color: white;
+    height: 75px;
+    cursor:pointer;
+    opacity: 50%;
+    font-weight: 600;
     font-size: larger;
-    padding: 5px;
+    width: 80vw;
 }
 
 button:hover {
-    box-shadow: 3px 3px 3px #575858;
-    border-radius: 5%;
-    padding: 5px;
+    opacity: 100%;
+}
+
+#seniorityButton {
+    background-color: #6D1585;
+}
+
+#republicans {
+    background-color: #9D2100;
+}
+
+#democrats {
+    background-color: #1B2682;
+}
+
+#independents {
+    background-color: #0B661A;
+}
+
+#missedVotes {
+    background-color: #8B909E;
 }
 
 .congressGrid {
@@ -40,11 +60,13 @@ button:hover {
 .figureDiv {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
     flex-direction: column;
-    width: 175px;
-    height: 225px;
-    padding: 15px;
+    width: 100px;
+    height: 175px;
+    background-color: white;
+    margin: 1em;
+    border-radius: 5%;
+    box-shadow: 3px 3px 3px #575858;
 }
 
 figure {
@@ -52,9 +74,8 @@ figure {
 }
 
 figure img {
-    border-radius: 50%;
-    box-shadow: 3px 3px 3px #575858;
-    margin: 5px;
+    width: 100px;
+    border-radius: 5%;
 }
 
 figcaption {
@@ -64,25 +85,30 @@ figcaption {
     justify-content: space-between;
     text-align: center;
     height: 50px;
+    padding: 5px;
+    color: white;
 }
 
 .fa-republican {
-    color: red;
-/*     padding-top: 15px; */
+    color: white;
     position: absolute;
     align-self: flex-start;
+    margin-left: 2px;
+    margin-top: 2px;
 }
 
 .fa-democrat {
-    color: blue;
-    /* padding-top: 15px; */
+    color: white;
     position: absolute;
     align-self: flex-start;
+    margin-left: 2px;
+    margin-top: 2px;
 }
 
 .fa-mitten {
-    color: green;
-    /* padding: 15px; */
+    color: white;
     position: absolute;
     align-self: flex-start;
+    margin-left: 2px;
+    margin-top: 2px;
 }
