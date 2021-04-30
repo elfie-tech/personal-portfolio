@@ -16,12 +16,15 @@ loadButton.addEventListener('click', () => {
 })
 
 //this click event allows the user to fetch a Pokemon by ID or Name
+//it also stops executing code if the cancel button is clicked
 fetchButton.addEventListener('click', () => {
   removeChildren(pokeGrid)
-    let pokeId = prompt("Pokemon ID or Name:").toLowerCase()
-    getAPIData(`https://pokeapi.co/api/v2/pokemon/${pokeId}`)
+  let pokeId = prompt("Pokemon ID or Name:")
+  if (pokeId && pokeId.length > 0) {
+    getAPIData(`https://pokeapi.co/api/v2/pokemon/${pokeId.toLowerCase()}`)
     .then((data) => populatePokeCard(data))
     .catch((error) => console.log(error))
+  }
 })
 
 class Pokemon {
@@ -42,6 +45,7 @@ class Pokemon {
 newButton.addEventListener('click', () => {
   removeChildren(pokeGrid)
   let pokeName = prompt('What is the name of your new Pokemon?')
+    if (pokeName != undefined) {
   let pokeId = 900
   let pokeAbilities = prompt('What are your Pokemon abilities? (use a comma separated list',)
   let pokeHeight = prompt('What is the height of your new Pokemon?')
@@ -68,7 +72,7 @@ newButton.addEventListener('click', () => {
       }
     }]
   )
-  populatePokeCard(newPokemon)
+  populatePokeCard(newPokemon)}
 })
 
 //this function allows the user to use commas to separate the abilities inserted in the prompt that shows up when you click on the new pokemon button.
