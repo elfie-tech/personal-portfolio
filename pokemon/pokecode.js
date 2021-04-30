@@ -8,12 +8,14 @@ const newButton = document.querySelector('.newPokemon')
 let offset = 0
 let limit = 25
 
+//this click event allows the user to load more Pokemon each time the button is clicked
 loadButton.addEventListener('click', () => {
     loadPage(offset, limit)
     offset = offset + limit
     loadButton.textContent = `Load More Pokemon`
 })
 
+//this click event allows the user to fetch a Pokemon by ID or Name
 fetchButton.addEventListener('click', () => {
   removeChildren(pokeGrid)
     let pokeId = prompt("Pokemon ID or Name:").toLowerCase()
@@ -36,6 +38,7 @@ class Pokemon {
   }
 }
 
+//this click event prompts the user to insert data to create a new Pokemon
 newButton.addEventListener('click', () => {
   removeChildren(pokeGrid)
   let pokeName = prompt('What is the name of your new Pokemon?')
@@ -67,7 +70,9 @@ newButton.addEventListener('click', () => {
   )
   populatePokeCard(newPokemon)
 })
-  
+
+//this function allows the user to use commas to separate the abilities inserted in the prompt that shows up when you click on the new pokemon button.
+//it then returns how many abilities your new pokemon has.
 function getAbilitiesArray(commaString) {
   let tempArray = commaString.split(',')
   return tempArray.map((abilityName) => {
@@ -90,6 +95,7 @@ async function getAPIData(url) {
     }
 }
 
+//this function gets the API data
 function loadPage(offset, limit) {
   removeChildren(pokeGrid)
   getAPIData(
@@ -103,6 +109,7 @@ function loadPage(offset, limit) {
   })
 }
 
+//this function creates the pokemon card
 function populatePokeCard(singlePokemon) {
     let pokeScene = document.createElement('div')
     pokeScene.className = 'scene'
@@ -118,6 +125,7 @@ function populatePokeCard(singlePokemon) {
     pokeGrid.appendChild(pokeScene)
 }
 
+//this function defines the pokemon card front
 function populateCardFront(pokemon) {
     let pokeFront = document.createElement('div')
     pokeFront.className = 'card__face card__face--front'
@@ -136,6 +144,7 @@ function populateCardFront(pokemon) {
     return pokeFront
 }
 
+//this function defines the pokemon card back
 function populateCardBack(pokemon) {
     let pokeBack = document.createElement('div')
     pokeBack.className = 'card__face card__face--back'
@@ -151,7 +160,6 @@ function populateCardBack(pokemon) {
 
     backLabelMoves.textContent = `Moves: ${pokemon.moves.length}`
     backLabelAbilities.textContent = `Abilities: ${pokemon.abilities.length}`
-
     
     pokeBack.appendChild(pokeBackId)
     backLabel.appendChild(pokeBackId)
